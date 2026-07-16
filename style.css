@@ -1,0 +1,516 @@
+/* 전체 기본 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    background-color: #FFFBE7;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* 헤더 영역 */
+header {
+    width: 100%;
+    margin: 50px auto 20px auto;
+    padding: 0;
+    text-align: center;
+}
+
+/* 헤더 프로필 이미지 */
+.header-img {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid #717171;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 메뉴 버튼 컨테이너 */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+/* 개별 메뉴 버튼 */
+.menu-btn {
+    background-color: #D7EDFB;
+    font-family: 'Geist Pixel', monospace;
+    color: #000000;
+    border: 2px solid #D7EDFB;
+    padding: 10px 24px;
+    font-weight: normal;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    letter-spacing: 0.5px;
+}
+
+.menu-btn:hover {
+    background-color: #D7EDFB;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 111, 97, 0.15);
+}
+
+.menu-btn.active {
+    background-color: #6AC3FF;
+    color: white;
+    border-color: #6AC3FF;
+}
+
+/* 갤러리 메인 영역 */
+.gallery {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* 메인 화면 이미지 스타일 */
+.main-display-img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* 콘텐츠 영역 제어 */
+.content-area {
+    margin-top: 30px;
+    min-height: 300px;
+}
+
+/* 기본적으로 모든 콘텐츠 뷰는 숨김 처리 */
+.content-view {
+    display: none;
+}
+
+/* active 클래스가 붙은 콘텐츠 뷰만 화면에 표시 */
+.content-view.active {
+    display: block;
+    animation: fadeIn 0.5s ease; /* 나타날 때 부드러운 효과 추가 */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 푸터 */
+footer {
+    padding: 40px;
+    background-color: #FFF7CE;
+    color: #848483;
+    font-size: 0.9rem;
+    font-family: 'Geist Pixel', monospace;
+}
+
+/* 편지 */
+.pixel-envelope-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 10px;
+    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+}
+
+/* 픽셀 편지 봉투 */
+.pixel-envelope {
+    background-color: #FFFFFF;
+    padding: 30px 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* 픽셀 더블 보더 스타일 */
+    border: 2px solid #000000;
+    box-shadow: 5px 5px 0px 0px #bdbdbd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.pixel-envelope:hover {
+    transform: translate(-2px, -2px);
+}
+
+.pixel-envelope:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px 0px #848483;
+}
+
+.envelope-tag {
+    background-color: #FFFBE7;
+    color: #000000;
+    padding: 5px 15px;
+    font-size: 1.1rem;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #B3B7BA;
+}
+
+.envelope-preview {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 픽셀 편지 본문 */
+.pixel-letter {
+    display: none; /* 초기 상태 숨김 */
+    background-color: #FFFFFF;
+    padding: 40px 30px;
+    text-align: left;
+    
+    border: 2px solid #000000;
+    box-shadow: 6px 6px 0px 0px #bdbdbd;
+    
+    /* 편지지 가로줄 선 */
+    background-image: linear-gradient(#BDBDBD 1px, transparent 1px);
+    background-size: 100% 2.2rem;
+    line-height: 2.2rem; /* 배경 줄 격자 크기와 글자 높이 맞춤 */
+}
+
+/* 편지 나타날 때 애니메이션 */
+.pixel-letter.open {
+    display: block;
+    animation: pixelPop 0.3s steps(4);
+}
+
+@keyframes pixelPop {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.pixel-letter-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #111;
+    border-bottom: 3px double #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.pixel-letter-body {
+    font-size: 1rem;
+    color: #111;
+    word-break: keep-all;
+}
+
+.pixel-letter-body p {
+    margin: 0 0 2.2rem 0; /* 배경 가로선 크기에 맞춰 문단 간격 조정 */
+}
+
+.pixel-letter-footer {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #111;
+    margin-top: 30px;
+    border-top: 2px dashed #000;
+    padding-top: 15px;
+}
+
+/* 갤러리 */
+.memory-container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+}
+
+.memory-title {
+    font-size: 1.8rem;
+    color: #2D68C4;
+    margin-bottom: 5px;
+}
+
+.memory-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* 3장씩 3줄로 보여주는 Grid 레이아웃 */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+    justify-items: center;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px 15px 20px 15px;
+    width: 240px;
+    box-sizing: border-box;
+    
+    border: 2px solid #000000;
+    box-shadow: 6px 6px 0px 0px #bdbdbd;
+    
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
+}
+.polaroid:nth-child(3n) {
+    transform: rotate(-1.5deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 10px 10px 0px 0px #B0B0B0;
+    z-index: 10;
+}
+
+/* 이미지 스타일 */
+.polaroid img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border: 2px solid #000000;
+}
+
+/* 사진 밑 캡션 */
+.caption {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    word-break: keep-all;
+}
+
+@media (max-width: 850px) {
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 카메라 */
+.camera-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+}
+
+.camera-title {
+    font-size: 1.8rem;
+    color: #2D68C4;
+    margin-bottom: 5px;
+}
+
+.camera-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.camera-box {
+    background-color: #FFFFFF;
+    border: 2px solid #000;
+    padding: 20px;
+    box-shadow: 6px 6px 0px #bdbdbd;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+}
+
+/* 실시간 카메라 스크린 */
+.camera-screen {
+    background-color: #000;
+    border: 2px solid #000;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#webcam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1); /* 좌우 반전 처리 */
+}
+
+/* 촬영 컨트롤부 */
+.camera-controls {
+    margin-top: 15px;
+}
+
+/* 슛 버튼 */
+.shoot-btn {
+    background-color: #FFFBE7;
+    font-family: 'Geist Pixel', monospace;
+    font-size: 1.2rem;
+    color: #000;
+    border: 2px solid #000;
+    padding: 10px 30px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #bdbdbd;
+    font-weight: bold;
+    transition: all 0.1s ease;
+}
+
+.shoot-btn:hover {
+    background-color: #FFFDF0;
+}
+
+.shoot-btn:active {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px #848483;
+}
+
+/* 사진 인화 영역 */
+.printed-photo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+}
+
+/* 즉석 사진 인화 슬롯 */
+.printer-slot {
+    min-height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.printer-empty-msg {
+    color: #999;
+    font-size: 0.95rem;
+}
+
+/* 인화되는 폴라로이드 픽셀 애니메이션 */
+.printed-polaroid {
+    background: white;
+    padding: 12px 12px 20px 12px;
+    width: 220px;
+    border: 2px solid #000;
+    box-shadow: 6px 6px 0px #bdbdbd;
+    animation: printOut 1s steps(6) forwards;
+    transform-origin: top center;
+}
+
+.printed-polaroid img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border: 2px solid #000;
+    transform: scaleX(-1); /* 촬영된 거울 모드 유지 */
+}
+
+/* 레트로 프린트 애니메이션 */
+@keyframes printOut {
+    0% {
+        transform: translateY(-50px) scaleY(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* 노래 */
+.hbd-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+}
+
+.hbd-title {
+    font-size: 1.8rem;
+    color: #2D68C4;
+    margin-bottom: 5px;
+}
+
+.hbd-subtitle {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.cake-box {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    display: block;
+    margin: 0 auto 30px auto;
+}
+
+/* 케이크 이미지 스타일 */
+.cake-img {
+    max-width: 100%;
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+}
+
+/* 음악 버튼 구역 */
+.music-controller {
+    margin-top: 10px;
+}
+
+/* 음악 플레이/스톱 버튼 */
+.music-btn {
+    background-color: #FFFBE7;
+    font-family: 'Geist Pixel', monospace;
+    font-size: 1.1rem;
+    color: #000;
+    border: 2px solid #000;
+    padding: 10px 25px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #bdbdbd;
+    font-weight: bold;
+    transition: all 0.1s ease;
+}
+
+.music-btn:hover {
+    background-color: #FFFDF0;
+}
+
+/* 음악이 재생 중일 때의 활성화 스타일 */
+.music-btn.playing {
+    background-color: #D7EDFB;
+    box-shadow: 2px 2px 0px #848483;
+    transform: translate(2px, 2px);
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서모임</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="images/HEADER_IMAGE.PNG" alt="독서모임 추억" class="header-img">
+    </header>
+
+    <main class="gallery">
+        <div class="button-container">
+            <button class="menu-btn" data-target="letter">LETTER</button>
+            <button class="menu-btn" data-target="memory">MEMORY</button>
+            <button class="menu-btn" data-target="camera">CAMERA</button>
+            <button class="menu-btn" data-target="hbd">HBD</button>
+        </div>
+
+        <div class="content-area">
+            <div id="default-main" class="content-view active">
+                <img src="images/MAIN_IMAGE.PNG" alt="메인 이미지" class="main-display-img">
+            </div>
+
+            <div id="content-letter" class="content-view">
+                <div class="pixel-envelope-container">
+                    <div class="pixel-envelope" id="pixel-envelope">
+                        <div class="envelope-tag">CLICK! ✉️</div>
+                        <p class="envelope-preview">누군가 편지를 보냈네요? (누구일까용)</p>
+                    </div>
+
+                    <div class="pixel-letter" id="pixel-letter-content">
+                        <div class="pixel-letter-header">
+                            <span>TO. 독서모임 친구들에게</span>
+                            <span class="letter-date">2026. 07</span>
+                        </div>
+                        <div class="pixel-letter-body">
+                            <p>얘들아 안녕 나 호은이야.</p>
+                            <p>혜수 생일이기도 하고, 동민이도 곧 멀리 떠날 날이 얼마 남지 않아서 오랜만에 컴공과 본업좀 해본다. 진짜 오랜만에 웹페이지 만드는 중 ^ㅁ^</p>
+                            <p>아마 이걸 볼 때 즈음이면 혜수 집에서 놀면서 진대도 많이 했겠지? 여기서는 그냥 간단하게 편지 쓴다. 얘기는 만나서 실컷 하자!</p>
+                            <p>당분간 우리들은 긴 이별을 겪을 거지만, 그래도 항상 가까운 친구 사이였으면 좋겠어 ❤️ 기쁜일이든 슬픈일이든 함께 나누자.</p>
+                            <p>다시 언제 만날지는 모르겠지만 그날까지 열심히 살아보자!! 그럼 안뇽~</p>
+                        </div>
+                        <div class="pixel-letter-footer">
+                            FROM. 독서모임 회장
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-memory" class="content-view">
+                <div class="memory-container">
+                    <h2 class="memory-title">OUR MEMORIES 💙</h2>
+                    <p class="memory-subtitle">사진 안 옮겨서 옛날 사진 많이 없음 주의</p>
+                    
+                    <div class="photo-grid">
+                        <div class="polaroid">
+                            <img src="images/MEMORY1.JPG" alt="추억 사진 1" onerror="this.src='https://via.placeholder.com/250x200/D7EDFB/000000?text=Photo+1'">
+                            <div class="caption">처음으로 강릉 여행 🌊</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="images/MEMORY2.JPG" alt="추억 사진 2" onerror="this.src='https://via.placeholder.com/250x200/C3E7FF/000000?text=Photo+2'">
+                            <div class="caption">동민이에게 반반 화장 💄</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="images/MEMORY3.JPG" alt="추억 사진 3" onerror="this.src='https://via.placeholder.com/250x200/A0D2F3/000000?text=Photo+3'">
+                            <div class="caption">학교 축제(대학원생 빠꾸) ⚠️</div>
+                        </div>
+
+                        <div class="polaroid">
+                            <img src="images/MEMORY4.jpg" alt="추억 사진 4" onerror="this.src='https://via.placeholder.com/250x200/D7EDFB/000000?text=Photo+4'">
+                            <div class="caption">연말 모임 👯‍♀️</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="images/MEMORY5.JPG" alt="추억 사진 5" onerror="this.src='https://via.placeholder.com/250x200/C3E7FF/000000?text=Photo+5'">
+                            <div class="caption">샤브샤브 먹은 날 💛</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="images/MEMORY6.jpg" alt="추억 사진 6" onerror="this.src='https://via.placeholder.com/250x200/A0D2F3/000000?text=Photo+6'">
+                            <div class="caption">한강에서 먹부림 🍗</div>
+                        </div>
+
+                        <div class="polaroid">
+                            <img src="images/MEMORY7.JPG" alt="추억 사진 7" onerror="this.src='https://via.placeholder.com/250x200/D7EDFB/000000?text=Photo+7'">
+                            <div class="caption">성회장님 졸업식 🎓</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="images/MEMORY8.jpg" alt="추억 사진 8" onerror="this.src='https://via.placeholder.com/250x200/C3E7FF/000000?text=Photo+8'">
+                            <div class="caption">이사원 졸업식 🎓</div>
+                        </div>
+                        <div class="polaroid">
+                            <img src="images/MEMORY9.jpg" alt="추억 사진 9" onerror="this.src='https://via.placeholder.com/250x200/A0D2F3/000000?text=Photo+9'">
+                            <div class="caption">마지막 청주 여행 🎒</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-camera" class="content-view">
+                <div class="camera-container">
+                    <h2 class="camera-title">TAKE A PICTURE 📷</h2>
+                    <p class="camera-subtitle">사진을 찍어보시오</p>
+
+                    <div class="camera-box">
+                        <div class="camera-screen">
+                            <video id="webcam" autoplay playsinline></video>
+                            <canvas id="capture-canvas" style="display:none;"></canvas>
+                        </div>
+                        
+                        <div class="camera-controls">
+                            <button id="btn-shoot" class="shoot-btn">📸 SHOOT!</button>
+                        </div>
+                    </div>
+
+                    <div class="printed-photo-area" id="photo-printer">
+                        <h3 class="print-title">PRINTED PHOTO</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-hbd" class="content-view">
+                <div class="hbd-container">
+                    <h2 class="hbd-title">HAPPY BIRTHDAY! 🎉</h2>
+                    <p class="hbd-subtitle">마지막으로 혜수스의 생일(+동민이의 새로운 시작) 축하하며 마무리</p>
+
+                    <div class="cake-box">
+                        <img src="images/CAKE_IMAGE.png" alt="생일 케이크" class="cake-img" onerror="this.src='https://via.placeholder.com/300/FFFBE7/000000?text=🎂+CAKE'">
+                    </div>
+
+                    <div class="music-controller">
+                        <audio id="hbd-bgm" src="audio/happy-birthday.mp3" loop></audio>
+                        <button id="btn-music" class="music-btn">🎵 PLAY MUSIC</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026. Made by Your Best Friend ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
