@@ -57,7 +57,7 @@ menuButtons.forEach((button) => {
         if (hbdBgm && btnMusic) {
             hbdBgm.pause();
             hbdBgm.currentTime = 0;
-            btnMusic.textContent = "🎵 PLAY MUSIC";
+            btnMusic.textContent = "▶️ PLAY MUSIC";
             btnMusic.classList.remove("playing");
         }
     });
@@ -126,7 +126,7 @@ if (btnShoot && webcamElement && canvasElement && photoPrinter) {
         photoPrinter.innerHTML = `
             <div class="printed-polaroid">
                 <img src="${imageDataUrl}" alt="촬영된 즉석 사진">
-                <div class="caption">MEMORY IN 2026 💙</div>
+                <div class="caption">MEMORY IN 2026 🤎</div>
             </div>
         `;
     });
@@ -144,7 +144,7 @@ if (btnMusic && hbdBgm) {
             btnMusic.classList.add("playing");
         } else {
             hbdBgm.pause();
-            btnMusic.textContent = "🎵 PLAY MUSIC";
+            btnMusic.textContent = "▶️ PLAY MUSIC";
             btnMusic.classList.remove("playing");
         }
     });

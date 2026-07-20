@@ -2,11 +2,16 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    font-family: Galmuri9, sans-serif !important; /* 갈무리9 적용 */
     background-color: #FFFBE7;
     color: #333;
     line-height: 1.6;
     text-align: center;
+
+    /* 픽셀 폰트가 브라우저에서 흐려지지 않고 칼같이 선명하게 나오도록 설정 */
+    font-smooth: never;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* 헤더 영역 */
@@ -42,7 +47,7 @@ header {
 /* 개별 메뉴 버튼 */
 .menu-btn {
     background-color: #D7EDFB;
-    font-family: 'Geist Pixel', monospace;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
     color: #000000;
     border: 2px solid #D7EDFB;
     padding: 10px 24px;
@@ -112,7 +117,7 @@ footer {
     background-color: #FFF7CE;
     color: #848483;
     font-size: 0.9rem;
-    font-family: 'Geist Pixel', monospace;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
 }
 
 /* 편지 */
@@ -120,7 +125,7 @@ footer {
     max-width: 600px;
     margin: 40px auto;
     padding: 10px;
-    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
 }
 
 /* 픽셀 편지 봉투 */
@@ -131,36 +136,39 @@ footer {
     transition: all 0.2s ease;
     
     /* 픽셀 더블 보더 스타일 */
-    border: 2px solid #000000;
-    box-shadow: 5px 5px 0px 0px #bdbdbd;
+    border: 1.5px solid #717171;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 }
 
-.pixel-envelope:hover {
-    transform: translate(-2px, -2px);
-}
-
-.pixel-envelope:active {
-    transform: translate(3px, 3px);
-    box-shadow: 2px 2px 0px 0px #848483;
-}
-
 .envelope-tag {
     background-color: #FFFBE7;
-    color: #000000;
+    color: #7A5C43;
     padding: 5px 15px;
-    font-size: 1.1rem;
-    border: 2px solid #000;
-    box-shadow: 3px 3px 0px #B3B7BA;
+    font-size: 1rem;
+    border: 1.5px solid #717171;
+
+    /* 마우스 포인터와 부드러운 전환 효과 추가 */
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+/* 버튼에 마우스 올렸을 때 (hover) */
+.envelope-tag:hover {
+    background-color: #FFFDF0;
+    color: #7A5C43; /* 글자 색상은 기존 톤 유지 */
+}
+
+.envelope-tag:active {
+    transform: translate(3px, 3px);
 }
 
 .envelope-preview {
     font-size: 1rem;
-    color: #333;
-    font-weight: bold;
+    color: #7A5C43;
+    font-weight: normal;
 }
 
 /* 픽셀 편지 본문 */
@@ -170,8 +178,7 @@ footer {
     padding: 40px 30px;
     text-align: left;
     
-    border: 2px solid #000000;
-    box-shadow: 6px 6px 0px 0px #bdbdbd;
+    border: 1.5px solid #717171;
     
     /* 편지지 가로줄 선 */
     background-image: linear-gradient(#BDBDBD 1px, transparent 1px);
@@ -199,17 +206,17 @@ footer {
 .pixel-letter-header {
     display: flex;
     justify-content: space-between;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.1rem;
-    color: #111;
-    border-bottom: 3px double #000;
+    color: #7A5C43;
+    border-bottom: 3px double #7A5C43;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
 .pixel-letter-body {
     font-size: 1rem;
-    color: #111;
+    color: #7A5C43;
     word-break: keep-all;
 }
 
@@ -219,11 +226,11 @@ footer {
 
 .pixel-letter-footer {
     text-align: right;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.1rem;
-    color: #111;
+    color: #7A5C43;
     margin-top: 30px;
-    border-top: 2px dashed #000;
+    border-top: 2px dashed #7A5C43;
     padding-top: 15px;
 }
 
@@ -232,18 +239,18 @@ footer {
     max-width: 960px;
     margin: 40px auto;
     padding: 0 20px;
-    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
 }
 
 .memory-title {
-    font-size: 1.8rem;
-    color: #2D68C4;
+    font-size: 1.5rem;
+    color: #7A5C43;
     margin-bottom: 5px;
 }
 
 .memory-subtitle {
     font-size: 1rem;
-    color: #666;
+    color: #7A5C43;
     margin-bottom: 40px;
 }
 
@@ -261,11 +268,13 @@ footer {
     width: 240px;
     box-sizing: border-box;
     
-    border: 2px solid #000000;
-    box-shadow: 6px 6px 0px 0px #bdbdbd;
+    border: 1.5px solid #717171;
     
     transform: rotate(-2deg);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backface-visibility: hidden;         /* 회전 시 뒷면 연산을 숨겨 글자 왜곡 방지 */
+    transform-style: preserve-3d;        /* 3D 레이어로 처리해 애니메이션을 부드럽게 고정 */
+    will-change: transform;
 }
 
 .polaroid:nth-child(even) {
@@ -277,7 +286,7 @@ footer {
 
 .polaroid:hover {
     transform: rotate(0deg) scale(1.05);
-    box-shadow: 10px 10px 0px 0px #B0B0B0;
+    box-shadow: 7px 7px 0px 0px #E6DFC3;
     z-index: 10;
 }
 
@@ -286,17 +295,20 @@ footer {
     width: 100%;
     height: 190px;
     object-fit: cover;
-    border: 2px solid #000000;
+    border: 1.5px solid #717171;
 }
 
 /* 사진 밑 캡션 */
 .caption {
     margin-top: 15px;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #222;
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: #7A5C43;
     text-align: center;
     word-break: keep-all;
+    backface-visibility: hidden;         /* 회전 시 뒷면 연산을 숨겨 글자 왜곡 방지 */
+    transform-style: preserve-3d;        /* 3D 레이어로 처리해 애니메이션을 부드럽게 고정 */
+    will-change: transform;
 }
 
 @media (max-width: 850px) {
@@ -316,26 +328,25 @@ footer {
     max-width: 600px;
     margin: 40px auto;
     padding: 0 20px;
-    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
 }
 
 .camera-title {
-    font-size: 1.8rem;
-    color: #2D68C4;
+    font-size: 1.5rem;
+    color: #7A5C43;
     margin-bottom: 5px;
 }
 
 .camera-subtitle {
     font-size: 1rem;
-    color: #666;
+    color: #7A5C43;
     margin-bottom: 30px;
 }
 
 .camera-box {
     background-color: #FFFFFF;
-    border: 2px solid #000;
+    border: 1.5px solid #717171;
     padding: 20px;
-    box-shadow: 6px 6px 0px #bdbdbd;
     margin-bottom: 40px;
     display: inline-block;
     width: 100%;
@@ -346,7 +357,7 @@ footer {
 /* 실시간 카메라 스크린 */
 .camera-screen {
     background-color: #000;
-    border: 2px solid #000;
+    border: 1.5px solid #717171;
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -371,14 +382,13 @@ footer {
 /* 슛 버튼 */
 .shoot-btn {
     background-color: #FFFBE7;
-    font-family: 'Geist Pixel', monospace;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
     font-size: 1.2rem;
-    color: #000;
-    border: 2px solid #000;
+    color: #7A5C43;
+    border: 1.5px solid #717171;
     padding: 10px 30px;
     cursor: pointer;
-    box-shadow: 4px 4px 0px #bdbdbd;
-    font-weight: bold;
+    font-weight: normal;
     transition: all 0.1s ease;
 }
 
@@ -388,7 +398,6 @@ footer {
 
 .shoot-btn:active {
     transform: translate(3px, 3px);
-    box-shadow: 1px 1px 0px #848483;
 }
 
 /* 사진 인화 영역 */
@@ -397,7 +406,13 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 350px;
+    min-height: 200px;
+}
+
+/* 타이틀 글자 색상 세부 조정 */
+.print-title {
+    color: #7A5C43;
+    font-size: 1rem;
 }
 
 /* 즉석 사진 인화 슬롯 */
@@ -410,7 +425,7 @@ footer {
 }
 
 .printer-empty-msg {
-    color: #999;
+    color: #7A5C43;
     font-size: 0.95rem;
 }
 
@@ -419,8 +434,7 @@ footer {
     background: white;
     padding: 12px 12px 20px 12px;
     width: 220px;
-    border: 2px solid #000;
-    box-shadow: 6px 6px 0px #bdbdbd;
+    border: 1.5px solid #717171;
     animation: printOut 1s steps(6) forwards;
     transform-origin: top center;
 }
@@ -429,7 +443,7 @@ footer {
     width: 100%;
     height: 170px;
     object-fit: cover;
-    border: 2px solid #000;
+    border: 1.5px solid #717171;
     transform: scaleX(-1); /* 촬영된 거울 모드 유지 */
 }
 
@@ -450,18 +464,18 @@ footer {
     max-width: 600px;
     margin: 40px auto;
     padding: 0 20px;
-    font-family: 'Geist Pixel', 'Apple SD Gothic Neo', sans-serif;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
 }
 
 .hbd-title {
-    font-size: 1.8rem;
-    color: #2D68C4;
+    font-size: 1.5rem;
+    color: #7A5C43;
     margin-bottom: 5px;
 }
 
 .hbd-subtitle {
     font-size: 1rem;
-    color: #666;
+    color: #7A5C43;
     margin-bottom: 30px;
 }
 
@@ -493,14 +507,13 @@ footer {
 /* 음악 플레이/스톱 버튼 */
 .music-btn {
     background-color: #FFFBE7;
-    font-family: 'Geist Pixel', monospace;
-    font-size: 1.1rem;
-    color: #000;
-    border: 2px solid #000;
+    font-family: 'Galmuri9', sans-serif; /* 갈무리9 적용 */
+    font-size: 1rem;
+    color: #7A5C43;
+    border: 1.5px solid #717171;
     padding: 10px 25px;
     cursor: pointer;
-    box-shadow: 3px 3px 0px #bdbdbd;
-    font-weight: bold;
+    font-weight: normal;
     transition: all 0.1s ease;
 }
 
@@ -510,7 +523,6 @@ footer {
 
 /* 음악이 재생 중일 때의 활성화 스타일 */
 .music-btn.playing {
-    background-color: #D7EDFB;
-    box-shadow: 2px 2px 0px #848483;
+    background-color: #E2D9C2;
     transform: translate(2px, 2px);
 }
