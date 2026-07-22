@@ -8,10 +8,31 @@ body {
     line-height: 1.6;
     text-align: center;
 
+    cursor: url('images/default_cursor.png'), auto;
+
     /* 픽셀 폰트가 브라우저에서 흐려지지 않고 칼같이 선명하게 나오도록 설정 */
     font-smooth: never;
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: grayscale;
+}
+
+button, 
+a, 
+.menu-btn, 
+.envelope-tag, 
+.pixel-envelope,
+.polaroid, 
+.shoot-btn, 
+.music-btn,
+button:hover,
+a:hover,
+.menu-btn:hover,
+.envelope-tag:hover,
+.pixel-envelope:hover,
+.polaroid:hover,
+.shoot-btn:hover,
+.music-btn:hover {
+    cursor: url('images/selected_cursor.png'), pointer !important;
 }
 
 /* 헤더 영역 */
